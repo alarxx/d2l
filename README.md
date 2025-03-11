@@ -190,3 +190,14 @@ conda install anaconda::jupyter
 - defaults
 - conda-forge
 - anaconda - поддерживаемая Anaconda Inc.
+
+---
+
+## Install Dependencies
+
+```sh
+conda activate myenv
+pip install d2l
+# https://pytorch.org/get-started
+pip install torch torchvision torchaudio
+```
