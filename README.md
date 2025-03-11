@@ -201,3 +201,22 @@ pip install d2l
 # https://pytorch.org/get-started
 pip install torch torchvision torchaudio
 ```
+
+---
+
+# D2L Notebooks
+
+```sh
+mkdir d2l-en && cd d2l-en
+curl https://d2l.ai/d2l-en-1.0.3.zip -o d2l-en.zip
+unzip d2l-en.zip && rm d2l-en.zip
+cd pytorch
+```
+
+```sh
+# conda activate myenv
+jupyter notebook
+```
+
+---
+
