@@ -1,5 +1,8 @@
 # D2L
 
+Reference:
+- Zhang, A., Lipton, Z. C., Li, M., & Smola, A. J. (2023). Dive into deep learning. Cambridge University Press. https://d2l.ai/
+
 ## Python
 
 module - file
@@ -204,7 +207,7 @@ pip install torch torchvision torchaudio
 
 ---
 
-# D2L Notebooks
+## D2L Notebooks
 
 ```sh
 mkdir d2l-en && cd d2l-en
