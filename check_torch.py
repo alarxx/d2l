@@ -2,7 +2,7 @@
 # pip3 install torch torchvision torchaudio
 
 import torch
-from d2l import torch as d2l
+# from d2l import torch as d2l
 
 def try_gpu(i = 0):
     if torch.cuda.device_count() >= i + 1:
@@ -17,10 +17,24 @@ if __name__ == "__main__":
 
     # CUDA: host - CPU, device - GPU
     # $ nvidia-smi
-    # x = torch.rand(5, 3) # assigned to the CPU context by default
     x = torch.ones(5, 3, device=try_gpu())
-    print("x: ", x)
     print("x.device:", x.device)
+    print("x: ", x)
+    y = torch.rand(5, 3, device=try_gpu(1)) # assigned to the CPU context by default
+    print("y.device:", y.device)
+    print("y: ", y)
+
+    # if we want to compute x + y we need to decide where to perform this operation
+
+    # z = x + y
+    # RuntimeError: Expected all tensors to be on the same device,
+    # but found at least two devices, cuda:0 and cuda:1!
+
+    z = x.cuda(1)
+    z = z.cuda(1)
+    z += y
+    print("z.device:", z.device)
+    print("z: ", z)
 
     # print(d2l.cpu(), d2l.gpu(), d2l.gpu(1))
     print(torch.device('cpu'), torch.device('cuda:0'), torch.device('cuda:1'))
